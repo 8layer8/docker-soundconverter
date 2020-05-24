@@ -1,4 +1,4 @@
- Pull base image.
+# Pull base image.
 FROM jlesage/baseimage-gui:ubuntu-18.04
 
 # Install soundconverter, since it's gnome, there are a couple dbus deps to keep it happy.
