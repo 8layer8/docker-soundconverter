@@ -24,6 +24,17 @@ Mount /config, /storage and /output as persistent volumes
 
 # Sample
 
+set environment variables to (examples!):
+```
+PUID=1020
+PGID=1020
+TZ=America/New_York
+VM_STORAGE=/mnt/vm_storage
+CONFIGFOLDER=/mnt/shared/configs
+LOCALFOLDER=/mnt/local/config
+
+# Docker-compose or portainer stacks:
+
 ---
 version: '3.7'
 services:
@@ -41,7 +52,7 @@ services:
       - ${VM_STORAGE}/soundconverter/output:/output
 
 
-# With traefik
+# Or with traefik
 ---
 version: '3.7'
 services:
@@ -80,3 +91,4 @@ services:
       - traefik.frontend.entryPoints=https
       - traefik.frontend.headers.SSLRedirect=true
       
+```
